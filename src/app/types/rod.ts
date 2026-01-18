@@ -1,0 +1,27 @@
+export type Rod = {
+  id: number;
+  isFavorite: boolean;
+  typeId: string;
+  brandId: string;
+  model: string;
+  year: number;
+  lengthCm: number;
+  action?: string;
+  tipType?: string;
+  minLureWeightGrams: number;
+  maxLureWeightGrams: number;
+  minLineTestLb?: number;
+  maxLineTestLb?: number;
+  minBraidPE?: number;
+  maxBraidPE?: number;
+  weightGrams?: number;
+  numberOfSections: number;
+  transportLengthCm?: number;
+  tipDiameterMm?: number;
+  buttDiameterMm?: number;
+  guides?: string;
+  material?: string;
+  description?: string;
+  imageUrls?: string[];
+  catalogUrl?: string;
+};

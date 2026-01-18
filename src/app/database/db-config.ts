@@ -1,0 +1,63 @@
+import { DBConfig } from 'ngx-indexed-db';
+import { DbStoreName } from './db-store-name';
+
+export const dbConfig: DBConfig = {
+  name: 'fishingRodsDb',
+  version: 1,
+  objectStoresMeta: [
+    {
+      store: DbStoreName.ROD_TYPES,
+      storeConfig: { keyPath: 'id', autoIncrement: true },
+      storeSchema: [{ name: 'name', keypath: 'name', options: { unique: true } }],
+    },
+    {
+      store: DbStoreName.BRANDS,
+      storeConfig: { keyPath: 'id', autoIncrement: true },
+      storeSchema: [{ name: 'name', keypath: 'name', options: { unique: true } }],
+    },
+    {
+      store: DbStoreName.RODS,
+      storeConfig: { keyPath: 'id', autoIncrement: true },
+      storeSchema: [
+        { name: 'isFavorite', keypath: 'isFavorite', options: { unique: false } },
+        { name: 'typeId', keypath: 'typeId', options: { unique: false } },
+        { name: 'brandId', keypath: 'brandId', options: { unique: false } },
+        { name: 'model', keypath: 'model', options: { unique: false } },
+        { name: 'year', keypath: 'year', options: { unique: false } },
+        { name: 'lengthCm', keypath: 'lengthCm', options: { unique: false } },
+        { name: 'action', keypath: 'action', options: { unique: false } },
+        { name: 'tipType', keypath: 'tipType', options: { unique: false } },
+        { name: 'minLureWeightGrams', keypath: 'minLureWeightGrams', options: { unique: false } },
+        { name: 'maxLureWeightGrams', keypath: 'maxLureWeightGrams', options: { unique: false } },
+        { name: 'minLineTestLb', keypath: 'mixLineTestLb', options: { unique: false } },
+        { name: 'maxLineTestLb', keypath: 'maxLineTestLb', options: { unique: false } },
+        { name: 'minBraidPE', keypath: 'minBraidPE', options: { unique: false } },
+        { name: 'maxBraidPE', keypath: 'maxBraidPE', options: { unique: false } },
+        { name: 'weightGrams', keypath: 'weightGrams', options: { unique: false } },
+        { name: 'numberOfSections', keypath: 'numberOfSections', options: { unique: false } },
+        { name: 'transportLengthCm', keypath: 'transportLengthCm', options: { unique: false } },
+        { name: 'tipDiameterMm', keypath: 'tipDiameterMm', options: { unique: false } },
+        { name: 'buttDiameterMm', keypath: 'buttDiameterMm', options: { unique: false } },
+        { name: 'guides', keypath: 'guides', options: { unique: false } },
+        { name: 'material', keypath: 'material', options: { unique: false } },
+        { name: 'description', keypath: 'description', options: { unique: false } },
+        { name: 'imageUrls', keypath: 'imageUrls', options: { unique: false } },
+        { name: 'catalogUrl', keypath: 'catalogUrl', options: { unique: false } },
+      ],
+    },
+    {
+      store: DbStoreName.ADVERTISEMENTS,
+      storeConfig: { keyPath: 'id', autoIncrement: true },
+      storeSchema: [
+        { name: 'rodId', keypath: 'rodId', options: { unique: false } },
+        { name: 'isUsed', keypath: 'isUsed', options: { unique: false } },
+        { name: 'priceUAH', keypath: 'priceUAH', options: { unique: false } },
+        { name: 'priceUSD', keypath: 'priceUSD', options: { unique: false } },
+        { name: 'date', keypath: 'date', options: { unique: false } },
+        { name: 'description', keypath: 'description', options: { unique: false } },
+        { name: 'sellerName', keypath: 'sellerName', options: { unique: false } },
+        { name: 'url', keypath: 'url', options: { unique: false } },
+      ],
+    },
+  ],
+};

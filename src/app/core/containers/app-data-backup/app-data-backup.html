@@ -1,0 +1,36 @@
+<h2>App data backup</h2>
+
+<div>
+  <h3>Restore app data from file</h3>
+  <p>
+    <label for="upload-file"> Select file </label>
+    <input
+      id="upload-file"
+      type="file"
+      accept="application/json"
+      (change)="onUploadFileSelected($event)"
+    />
+  </p>
+  @if (store.isUploadDataFromFileLoading()) {
+    <p>Uploading data...</p>
+  }
+  @if (store.uploadDataFromFileErrorMessage(); as errorMessage) {
+    <p>{{ errorMessage }}</p>
+  }
+</div>
+
+<div>
+  <h3>Make a backup copy</h3>
+  <p>
+    <button
+      [matButton]="'filled'"
+      [disabled]="store.isDownloadDataLoading()"
+      (click)="store.downloadData()"
+    >
+      Download app data
+    </button>
+  </p>
+  @if (store.downloadDataErrorMessage(); as errorMessage) {
+    <p>{{ errorMessage }}</p>
+  }
+</div>

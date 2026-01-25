@@ -1,0 +1,141 @@
+{
+  "rodTypes": [
+    {
+      "name": "Spinning",
+      "id": "spinning"
+    },
+    {
+      "name": "Casting",
+      "id": "casting"
+    }
+  ],
+  "brands": [
+    {
+      "name": "Azura",
+      "id": "azura"
+    },
+    {
+      "name": "Crazy Fish",
+      "id": "crazy_fish"
+    },
+    {
+      "name": "Daiwa",
+      "id": "daiwa"
+    },
+    {
+      "name": "Favorite",
+      "id": "favorite"
+    },
+    {
+      "name": "Golden Catch",
+      "id": "golden_catch"
+    },
+    {
+      "name": "Graphiteleader",
+      "id": "graphiteleader"
+    },
+    {
+      "name": "Hearty Rise",
+      "id": "hearty_rise"
+    },
+    {
+      "name": "Major Craft",
+      "id": "major_craft"
+    },
+    {
+      "name": "Shimano",
+      "id": "shimano"
+    },
+    {
+      "name": "St.Croix",
+      "id": "st_croix"
+    },
+    {
+      "name": "Tict",
+      "id": "tict"
+    },
+    {
+      "name": "Yamaga Blanks",
+      "id": "yamaga_blanks"
+    }
+  ],
+  "rods": [
+    {
+      "id": "black_porgy_5g_bp5b-782m",
+      "isFavorite": false,
+      "typeId": "casting",
+      "brandId": "major_craft",
+      "model": "Black Porgy 5G BP5B-782M",
+      "year": 2020,
+      "length": 234,
+      "action": "Regular Fast",
+      "tipType": "Tubular",
+      "minLureWeightGrams": 4,
+      "maxLureWeightGrams": 20,
+      "minBraidPE": 0.4,
+      "maxBraidPE": 1.5,
+      "weightGrams": 104,
+      "numberOfSections": 2,
+      "transportLengthCm": 121,
+      "guides": "Fuji Stainless Sic, Top guide + 10 pcs",
+      "material": "T1100G",
+      "description": "It is a model that supports frig rig with spinning that emphasizes distance. It is an indispensable model to directly aim for points with many roots and offshore breaks. The blanks with a particularly high sensitivity design have excellent operability of the lure at the bottom, and if you can feel the undulations of the bottom as well as the change in the water flow, it will have a big impact on the fishing results.",
+      "catalogUrl": "https://www.majorcraft.co.jp/rod/bp5/chinninggame/",
+      "imageUrls": [
+        "https://www.majorcraft.co.jp/wp-content/uploads/2024/09/BP5B-782M-1.png",
+        "https://www.majorcraft.co.jp/wp-content/uploads/2024/09/BP5B-782M_grip-1.png"
+      ]
+    },
+    {
+      "id": "20GSILPC-792M",
+      "isFavorite": true,
+      "typeId": "casting",
+      "brandId": "graphiteleader",
+      "model": "Silverado Prototype 20GSILPC-792M",
+      "year": 2020,
+      "length": 236,
+      "action": "Fast",
+      "tipType": "Tubular",
+      "minLureWeightGrams": 5,
+      "maxLureWeightGrams": 20,
+      "minBraidPE": 0.6,
+      "maxBraidPE": 1.2,
+      "weightGrams": 107,
+      "numberOfSections": 2,
+      "transportLengthCm": 121,
+      "guides": "Fuji Torzite",
+      "material": "T1100G, M40X",
+      "description": "An item with outstanding cast performance. Ideal for bottom rigs and heavy-duty plugs. Відчувається від 5 г + приманка в ідеальних умовах. Краще з 7 г. Верх 20 г + 3\" силікон",
+      "catalogUrl": "https://olympic-co-ltd.jp/fishing/products/20-silverado-prototype/",
+      "imageUrls": [
+        "https://olympic-co-ltd.jp/fishing/wp-content/uploads/2021/12/sub_silverado_prototype.jpg"
+      ]
+    },
+    {
+      "id": "24GTIRC-762-MH",
+      "isFavorite": true,
+      "typeId": "casting",
+      "brandId": "graphiteleader",
+      "model": "Tiro 24 24GTIRC-762-MH",
+      "year": 2024,
+      "length": 229,
+      "action": "Fast",
+      "tipType": "Tubular",
+      "minLureWeightGrams": 9,
+      "maxLureWeightGrams": 38,
+      "minBraidPE": 0.8,
+      "maxBraidPE": 1.5,
+      "minLineTestLb": 12,
+      "maxLineTestLb": 20,
+      "weightGrams": 110,
+      "numberOfSections": 2,
+      "transportLengthCm": 117.5,
+      "guides": "Fuji",
+      "catalogUrl": "https://jdmtackleheaven.com/products/graphiteleader-olympic-24-tiro-24gtirc-762mh",
+      "imageUrls": [
+        "https://jdmtackleheaven.com/cdn/shop/files/24tiro24GTIRC.jpg?v=1757052406&width=1500"
+      ]
+    }
+  ],
+  "advertisements": []
+}

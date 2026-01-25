@@ -1,0 +1,11 @@
+.filters {
+  display: flex;
+  gap: 24px;
+  padding: 24px 0;
+}
+
+.favorites-filter {
+  height: 56px; // visible mat-form-field height
+  display: flex;
+  align-items: center;
+}

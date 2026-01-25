@@ -1,3 +1,50 @@
+<a [routerLink]="'/backup'">Backup app data</a>
+
 <h2>Rod list</h2>
 
-<a [routerLink]="'/backup'">Backup app data</a>
+<div class="filters">
+  <mat-form-field [appearance]="'outline'">
+    <mat-label>Rod type</mat-label>
+    <mat-select [value]="selectedFilterRodType()" (selectionChange)="setFilterRodType($event)">
+      @for (rodTypeFilter of rodTypeFilterOptions(); track rodTypeFilter.label) {
+        <mat-option [value]="rodTypeFilter.value">{{ rodTypeFilter.label }}</mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field [appearance]="'outline'">
+    <mat-label>Max lure weight</mat-label>
+    <mat-select
+      [value]="selectedFilterMaxLureWeight()"
+      (selectionChange)="setFilterMaxLureWeight($event)"
+    >
+      @for (maxLureWeightFilter of maxLureWeightFilterOptions; track maxLureWeightFilter.label) {
+        <mat-option [value]="maxLureWeightFilter.value">{{ maxLureWeightFilter.label }}</mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
+
+  <div class="favorites-filter">
+    <mat-slide-toggle
+      [checked]="selectedFilterOnlyFavorites()"
+      (change)="setFilterOnlyFavorites($event)"
+      >Only favorites
+    </mat-slide-toggle>
+  </div>
+</div>
+
+@if (list.errorMessage()) {
+  <div>{{ list.errorMessage() }}</div>
+} @else {
+  @for (rod of list.items(); track rod.id) {
+    <p>
+      {{ rod.brandId | brandName }} {{ rod.model }}, Lure: {{ rod.minLureWeightGrams }} -
+      {{ rod.maxLureWeightGrams }} grams, {{ rod.typeId | rodTypeName }}
+      @if (rod.isFavorite) {
+        <mat-icon [fontIcon]="'star'"></mat-icon>
+      }
+    </p>
+  } @empty {
+    <p>Not found</p>
+  }
+}

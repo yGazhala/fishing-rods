@@ -53,7 +53,7 @@ export const dbConfig: DBConfig = {
         { name: 'isUsed', keypath: 'isUsed', options: { unique: false } },
         { name: 'priceUAH', keypath: 'priceUAH', options: { unique: false } },
         { name: 'priceUSD', keypath: 'priceUSD', options: { unique: false } },
-        { name: 'date', keypath: 'date', options: { unique: false } },
+        { name: 'timestamp', keypath: 'timestamp', options: { unique: false } },
         { name: 'description', keypath: 'description', options: { unique: false } },
         { name: 'sellerName', keypath: 'sellerName', options: { unique: false } },
         { name: 'url', keypath: 'url', options: { unique: false } },

@@ -9,7 +9,7 @@ export class AppDataBackupStore {
   private dbService = inject(DbService);
   private snackbar = inject(SnackbarService);
 
-  // selectors
+  // state
   public isUploadDataFromFileLoading = signal(false);
   public uploadDataFromFileErrorMessage = signal<string | undefined>(undefined);
   public isDownloadDataLoading = signal(false);

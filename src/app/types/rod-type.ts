@@ -1,4 +1,4 @@
-export enum RodType {
-  SPINNING = 'SPINNING',
-  CASTING = 'CASTING',
-}
+export type RodType = {
+  id: string;
+  name: string;
+};

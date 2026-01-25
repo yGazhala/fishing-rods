@@ -1,0 +1,7 @@
+@if (configStore.isConfigLoading()) {
+  <mat-spinner></mat-spinner>
+} @else if (configStore.configErrorMessage()) {
+  <div>{{ configStore.configErrorMessage() }}</div>
+} @else {
+  <router-outlet></router-outlet>
+}

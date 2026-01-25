@@ -7,6 +7,7 @@ import { Brand } from '../types/brand';
 import { RodType } from '../types/rod-type';
 import { Rod } from '../types/rod';
 import { Advertisement } from '../types/advertisement';
+import { RodListParams } from '../types/rod-list-params';
 
 @Injectable({
   providedIn: 'root',
@@ -34,6 +35,43 @@ export class DbService {
 
   public setAppData(data: DbData): Observable<void> {
     return this.clearAppData().pipe(concatMap(() => this.putAppData(data)));
+  }
+
+  public getRods(params: RodListParams): Observable<Rod[]> {
+    // from <= value <= to
+    const maxLureWeightRange = IDBKeyRange.bound(
+      params.maxLureWeightGrams?.from ?? 0,
+      params.maxLureWeightGrams?.to ?? Number.MAX_SAFE_INTEGER,
+    );
+
+    return this.db
+      .getAllByIndex<Rod>(DbStoreName.RODS, 'maxLureWeightGrams', maxLureWeightRange)
+      .pipe(
+        map((rods) => {
+          if (!params.onlyFavorites && !params.typeId) {
+            return rods;
+          }
+
+          return rods.filter((rod: Rod) => {
+            let isMatched = true;
+            if (params.onlyFavorites) {
+              isMatched = rod.isFavorite;
+            }
+            if (params.typeId) {
+              isMatched = isMatched && rod.typeId === params.typeId;
+            }
+            return isMatched;
+          });
+        }),
+      );
+  }
+
+  public getBrands(): Observable<Brand[]> {
+    return this.db.getAll<Brand>(DbStoreName.BRANDS);
+  }
+
+  public getRodTypes(): Observable<RodType[]> {
+    return this.db.getAll<RodType>(DbStoreName.ROD_TYPES);
   }
 
   private clearAppData(): Observable<void> {

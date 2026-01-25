@@ -4,8 +4,8 @@ export type Advertisement = {
   isUsed: boolean;
   priceUAH: number;
   priceUSD: number;
-  date: string;
+  timestamp: number;
   description?: string;
   sellerName: string;
   url?: string;
-}
+};

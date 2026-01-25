@@ -4,7 +4,7 @@ export type Rod = {
   typeId: string;
   brandId: string;
   model: string;
-  year: number;
+  year?: number;
   lengthCm: number;
   action?: string;
   tipType?: string;

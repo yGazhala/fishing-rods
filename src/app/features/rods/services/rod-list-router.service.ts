@@ -7,6 +7,8 @@ import {
   Router,
 } from '@angular/router';
 import { RodListParams } from '../../../types/rod-list-params';
+import { RouterService } from '../../../types/router-service';
+import { rodsRoutePath } from '../rods-route-path';
 
 type RodListQueryParams = {
   onlyFavorites?: 'true';
@@ -18,12 +20,17 @@ type RodListQueryParams = {
 @Injectable({
   providedIn: 'root',
 })
-export class RodListRouterService {
+export class RodListRouterService extends RouterService<RodListParams> {
   private router = inject(Router);
-  private activatedRoute = inject(ActivatedRoute);
 
-  public getParams(): RodListParams {
-    const snapshot: ActivatedRouteSnapshot = this.activatedRoute.snapshot;
+  public static override path = '';
+
+  public composeRouterLink(data: RodListParams): string {
+    return `/${rodsRoutePath}`;
+  }
+
+  public getRouteData(activatedRoute: ActivatedRoute): RodListParams {
+    const snapshot: ActivatedRouteSnapshot = activatedRoute.snapshot;
     const queryParams: RodListQueryParams = snapshot.queryParams;
 
     const result: RodListParams = {
@@ -62,6 +69,6 @@ export class RodListRouterService {
       };
     }
 
-    return this.router.navigate(['/'], extras);
+    return this.router.navigate([`/${rodsRoutePath}`], extras);
   }
 }

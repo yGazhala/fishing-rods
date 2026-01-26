@@ -1,37 +1,26 @@
 import { Component, computed, inject, OnInit, signal, Signal } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { RodListStore } from './rod-list.store';
 import { RodListRouterService } from '../../services/rod-list-router.service';
-import { BrandNamePipe } from '../../pipes/brand-name.pipe';
 import { MatFormField, MatLabel } from '@angular/material/input';
 import { MatOption, MatSelect, MatSelectChange } from '@angular/material/select';
 import { SelectOption } from '../../../../types/select-option';
 import { RodConfigStore } from '../../services/rod-config.store';
 import { RodListParams } from '../../../../types/rod-list-params';
 import { MatSlideToggle, MatSlideToggleChange } from '@angular/material/slide-toggle';
-import { MatIcon } from '@angular/material/icon';
-import { RodTypeNamePipe } from '../../pipes/rod-type-name.pipe';
+import { RodListItem } from '../rod-list-item/rod-list-item';
 
 type AllOption = 'ALL';
 
 @Component({
   selector: 'app-rod-list',
-  imports: [
-    RouterLink,
-    BrandNamePipe,
-    MatFormField,
-    MatLabel,
-    MatSelect,
-    MatOption,
-    MatSlideToggle,
-    MatIcon,
-    RodTypeNamePipe,
-  ],
+  imports: [RouterLink, MatFormField, MatLabel, MatSelect, MatOption, MatSlideToggle, RodListItem],
   templateUrl: './rod-list.html',
   styleUrl: './rod-list.scss',
   providers: [RodListStore],
 })
 export class RodList implements OnInit {
+  private activatedRoute = inject(ActivatedRoute);
   private listRouter = inject(RodListRouterService);
   private configStore = inject(RodConfigStore);
   protected list = inject(RodListStore);
@@ -93,7 +82,7 @@ export class RodList implements OnInit {
   ];
 
   public ngOnInit(): void {
-    const listParams = this.listRouter.getParams();
+    const listParams = this.listRouter.getRouteData(this.activatedRoute);
 
     if (listParams.typeId) {
       this.selectedFilterRodType.set(listParams.typeId);

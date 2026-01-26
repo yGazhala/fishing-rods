@@ -67,6 +67,7 @@
       "brandId": "major_craft",
       "model": "Black Porgy 5G BP5B-782M",
       "year": 2020,
+      "isDiscontinued": false,
       "length": 234,
       "action": "Regular Fast",
       "tipType": "Tubular",
@@ -84,7 +85,8 @@
       "imageUrls": [
         "https://www.majorcraft.co.jp/wp-content/uploads/2024/09/BP5B-782M-1.png",
         "https://www.majorcraft.co.jp/wp-content/uploads/2024/09/BP5B-782M_grip-1.png"
-      ]
+      ],
+      "searchIndex": "major craft black porgy 5g bp5b-782m"
     },
     {
       "id": "20GSILPC-792M",
@@ -93,6 +95,7 @@
       "brandId": "graphiteleader",
       "model": "Silverado Prototype 20GSILPC-792M",
       "year": 2020,
+      "isDiscontinued": false,
       "length": 236,
       "action": "Fast",
       "tipType": "Tubular",
@@ -109,15 +112,17 @@
       "catalogUrl": "https://olympic-co-ltd.jp/fishing/products/20-silverado-prototype/",
       "imageUrls": [
         "https://olympic-co-ltd.jp/fishing/wp-content/uploads/2021/12/sub_silverado_prototype.jpg"
-      ]
+      ],
+      "searchIndex": "graphiteleader silverado prototype 20gsilpc-792m"
     },
     {
       "id": "24GTIRC-762-MH",
       "isFavorite": true,
       "typeId": "casting",
       "brandId": "graphiteleader",
-      "model": "Tiro 24 24GTIRC-762-MH",
+      "model": "Tiro 24GTIRC-762-MH",
       "year": 2024,
+      "isDiscontinued": false,
       "length": 229,
       "action": "Fast",
       "tipType": "Tubular",
@@ -134,7 +139,8 @@
       "catalogUrl": "https://jdmtackleheaven.com/products/graphiteleader-olympic-24-tiro-24gtirc-762mh",
       "imageUrls": [
         "https://jdmtackleheaven.com/cdn/shop/files/24tiro24GTIRC.jpg?v=1757052406&width=1500"
-      ]
+      ],
+      "searchIndex": "graphiteleader tiro 24gtirc-762-mh"
     }
   ],
   "advertisements": []

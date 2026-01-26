@@ -24,6 +24,7 @@ export const dbConfig: DBConfig = {
         { name: 'brandId', keypath: 'brandId', options: { unique: false } },
         { name: 'model', keypath: 'model', options: { unique: false } },
         { name: 'year', keypath: 'year', options: { unique: false } },
+        { name: 'isDiscontinued', keypath: 'isDiscontinued', options: { unique: false } },
         { name: 'lengthCm', keypath: 'lengthCm', options: { unique: false } },
         { name: 'action', keypath: 'action', options: { unique: false } },
         { name: 'tipType', keypath: 'tipType', options: { unique: false } },
@@ -43,6 +44,7 @@ export const dbConfig: DBConfig = {
         { name: 'description', keypath: 'description', options: { unique: false } },
         { name: 'imageUrls', keypath: 'imageUrls', options: { unique: false } },
         { name: 'catalogUrl', keypath: 'catalogUrl', options: { unique: false } },
+        { name: 'searchIndex', keypath: 'searchIndex', options: { unique: false } },
       ],
     },
     {

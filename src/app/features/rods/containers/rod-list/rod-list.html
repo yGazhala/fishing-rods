@@ -37,13 +37,7 @@
   <div>{{ list.errorMessage() }}</div>
 } @else {
   @for (rod of list.items(); track rod.id) {
-    <p>
-      {{ rod.brandId | brandName }} {{ rod.model }}, Lure: {{ rod.minLureWeightGrams }} -
-      {{ rod.maxLureWeightGrams }} grams, {{ rod.typeId | rodTypeName }}
-      @if (rod.isFavorite) {
-        <mat-icon [fontIcon]="'star'"></mat-icon>
-      }
-    </p>
+    <app-rod-list-item [rod]="rod"></app-rod-list-item>
   } @empty {
     <p>Not found</p>
   }

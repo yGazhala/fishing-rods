@@ -1,0 +1,10 @@
+@if (rod(); as rod) {
+  <p>
+    {{ rod.brandId | brandName }} {{ rod.model }}, Lure: {{ rod.minLureWeightGrams }} -
+    {{ rod.maxLureWeightGrams }} grams, {{ rod.typeId | rodTypeName }}
+    @if (rod.isFavorite) {
+      <mat-icon [fontIcon]="'star'"></mat-icon>
+    }
+    <a [routerLink]="rodDetailsLink()">Details</a>
+  </p>
+}

@@ -12,10 +12,15 @@ import { MatButton } from '@angular/material/button';
 export class AppDataBackup {
   protected store = inject(AppDataBackupStore);
 
-  public onUploadFileSelected(event: Event): void {
+  protected onUploadFileSelected(event: Event): void {
     const files = (event.target as HTMLInputElement).files;
     if (files?.length) {
       this.store.uploadDataFromFile(files[0]);
     }
+  }
+
+  protected goBack(event: Event): void {
+    event.preventDefault();
+    window.history.back();
   }
 }

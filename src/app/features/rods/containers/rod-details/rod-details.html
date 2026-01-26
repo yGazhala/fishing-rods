@@ -1,0 +1,12 @@
+<p>
+  <a href="" (click)="goBack($event)">Back to Rods</a>
+</p>
+
+@if (rodStore.rod(); as rod) {
+  <h3>
+    {{ rod.brandId | brandName }} {{ rod.model }} Lure: {{ rod.minLureWeightGrams }} -
+    {{ rod.maxLureWeightGrams }} grams, {{ rod.typeId | rodTypeName }}
+  </h3>
+} @else if (rodStore.errorMessage(); as errorMessage) {
+  <div>{{ errorMessage }}</div>
+}

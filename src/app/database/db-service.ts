@@ -63,7 +63,12 @@ export class DbService {
             return isMatched;
           });
         }),
+        map((rods) => rods.sort((a, b) => a.searchIndex.localeCompare(b.searchIndex))),
       );
+  }
+
+  public getRodById(rodId: string): Observable<Rod | undefined> {
+    return this.db.getByKey<Rod>(DbStoreName.RODS, rodId);
   }
 
   public getBrands(): Observable<Brand[]> {

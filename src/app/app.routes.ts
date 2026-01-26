@@ -1,22 +1,21 @@
 import { Routes } from '@angular/router';
 import { AppDataBackup } from './core/containers/app-data-backup/app-data-backup';
-import { RodList } from './features/rods/containers/rod-list/rod-list';
-import { RodsRoot } from './features/rods/containers/rods-root/rods-root';
+import { rodsRoutes } from './features/rods/rods-routes';
+import { PageNotFound } from './core/containers/page-not-found/page-not-found';
 
 export const routes: Routes = [
   {
-    path: '',
-    pathMatch: 'full',
-    component: RodsRoot,
-    children: [
-      {
-        path: '',
-        component: RodList,
-      },
-    ],
-  },
-  {
     path: 'backup',
     component: AppDataBackup,
+  },
+  ...rodsRoutes,
+  {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'rods',
+  },
+  {
+    path: '**',
+    component: PageNotFound,
   },
 ];

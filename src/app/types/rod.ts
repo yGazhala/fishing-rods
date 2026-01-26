@@ -1,10 +1,11 @@
 export type Rod = {
-  id: number;
+  id: string;
   isFavorite: boolean;
   typeId: string;
   brandId: string;
   model: string;
   year?: number;
+  isDiscontinued: boolean;
   lengthCm: number;
   action?: string;
   tipType?: string;
@@ -24,4 +25,5 @@ export type Rod = {
   description?: string;
   imageUrls?: string[];
   catalogUrl?: string;
+  searchIndex: string;
 };

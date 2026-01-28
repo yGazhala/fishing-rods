@@ -24,6 +24,7 @@ export type Rod = {
   material?: string;
   description?: string;
   imageUrls?: string[];
+  videoUrls?: string[];
   catalogUrl?: string;
   searchIndex: string;
 };

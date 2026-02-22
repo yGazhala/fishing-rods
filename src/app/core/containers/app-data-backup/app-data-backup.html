@@ -2,7 +2,7 @@
   <a href="" (click)="goBack($event)">Go back</a>
 </p>
 
-<h2>App data backup</h2>
+<h2>User settings</h2>
 
 <div>
   <h3>Restore app data from file</h3>
@@ -37,4 +37,21 @@
   @if (store.downloadDataErrorMessage(); as errorMessage) {
     <p>{{ errorMessage }}</p>
   }
+</div>
+
+<div>
+  <h3>Default currency</h3>
+  <p>
+    <mat-form-field [appearance]="'outline'">
+      <mat-label>Currency</mat-label>
+      <mat-select
+        [value]="userSettings.defaultCurrency()"
+        (selectionChange)="setDefaultCurrency($event)"
+      >
+        @for (opt of currencyOptions; track opt.value) {
+          <mat-option [value]="opt.value">{{ opt.label }}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+  </p>
 </div>

@@ -1,0 +1,26 @@
+<h3>Price statistics</h3>
+
+<mat-tab-group
+  mat-stretch-tabs="false"
+  mat-align-tabs="start"
+  [selectedIndex]="selectedCurrencyTabIndex()"
+  (selectedTabChange)="setCurrency($event)"
+>
+  @for (tab of currencyTabs; track tab.value) {
+    <mat-tab [id]="tab.value" [label]="tab.label">
+      @if (stats.priceLineChartData(); as charData) {
+        <app-line-chart
+          class="line-chart"
+          [data]="charData"
+          [currency]="stats.selectedCurrency()"
+        ></app-line-chart>
+      }
+
+      <div class="summary">
+        <h4>Latest prices</h4>
+        <p>New rod: {{ stats.latestPriceNew() | price }}</p>
+        <p>Used rod: {{ stats.latestPriceUsed() | price }}</p>
+      </div>
+    </mat-tab>
+  }
+</mat-tab-group>

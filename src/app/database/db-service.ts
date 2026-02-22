@@ -8,12 +8,15 @@ import { RodType } from '../types/rod-type';
 import { Rod } from '../types/rod';
 import { Advertisement } from '../types/advertisement';
 import { RodListParams } from '../types/rod-list-params';
+import { UserProfileSettings } from '../types/user-profile-settings';
+import { CurrencyCode } from '../types/currency-code';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DbService {
   private db = inject(NgxIndexedDBService);
+  private currentUserId = 'current_user';
 
   public getAppData(): Observable<DbData> {
     return forkJoin([
@@ -21,13 +24,15 @@ export class DbService {
       this.db.getAll<RodType>(DbStoreName.ROD_TYPES),
       this.db.getAll<Rod>(DbStoreName.RODS),
       this.db.getAll<Advertisement>(DbStoreName.ADVERTISEMENTS),
+      this.db.getAll<UserProfileSettings>(DbStoreName.USER_PROFILE_SETTINGS),
     ]).pipe(
-      map(([brands, rodTypes, rods, advertisements]) => {
+      map(([brands, rodTypes, rods, advertisements, userProfileSettings]) => {
         return {
           brands,
           rodTypes,
           rods,
           advertisements,
+          userProfileSettings,
         };
       }),
     );
@@ -79,8 +84,37 @@ export class DbService {
     return this.db.getAll<RodType>(DbStoreName.ROD_TYPES);
   }
 
+  /**
+   * Returns all advertisements for the rod sorted by timestamp in descending order (newest first)
+   */
+  public getAdvertisementsByRodDescending(rodId: string): Observable<Advertisement[]> {
+    return this.db
+      .getAllByIndex<Advertisement>(DbStoreName.ADVERTISEMENTS, 'rodId', IDBKeyRange.only(rodId))
+      .pipe(map((items) => items.sort((a, b) => b.timestamp - a.timestamp)));
+  }
+
+  public getUserProfileSettings(): Observable<UserProfileSettings> {
+    return this.db.getByKey<UserProfileSettings>(
+      DbStoreName.USER_PROFILE_SETTINGS,
+      this.currentUserId,
+    );
+  }
+
+  public setDefaultCurrency(currency: CurrencyCode): Observable<UserProfileSettings> {
+    return this.getUserProfileSettings().pipe(
+      concatMap((existingSettings) => {
+        const newSettings: UserProfileSettings = {
+          ...existingSettings,
+          defaultCurrency: currency,
+        };
+        return this.db.update<UserProfileSettings>(DbStoreName.USER_PROFILE_SETTINGS, newSettings);
+      }),
+    );
+  }
+
   private clearAppData(): Observable<void> {
     return forkJoin([
+      this.db.clear(DbStoreName.USER_PROFILE_SETTINGS),
       this.db.clear(DbStoreName.BRANDS),
       this.db.clear(DbStoreName.ROD_TYPES),
       this.db.clear(DbStoreName.RODS),
@@ -93,6 +127,9 @@ export class DbService {
    */
   private putAppData(data: DbData): Observable<void> {
     const operations: Observable<unknown>[] = [];
+    if (data?.userProfileSettings?.length) {
+      operations.push(this.db.bulkPut(DbStoreName.USER_PROFILE_SETTINGS, data.userProfileSettings));
+    }
     if (data?.brands?.length) {
       operations.push(this.db.bulkPut(DbStoreName.BRANDS, data.brands));
     }

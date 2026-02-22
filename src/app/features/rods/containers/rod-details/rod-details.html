@@ -7,6 +7,20 @@
     {{ rod.brandId | brandName }} {{ rod.model }} Lure: {{ rod.minLureWeightGrams }} -
     {{ rod.maxLureWeightGrams }} grams, {{ rod.typeId | rodTypeName }}
   </h3>
+
+  @if (rod.videoUrls?.length) {
+    <!-- TODO: Insert video from rod object -->
+    <iframe
+      width="560"
+      height="315"
+      src="https://www.youtube.com/embed/-NQLMkw79N0"
+      title="YouTube video player"
+      frameborder="0"
+      allowfullscreen
+    ></iframe>
+  }
+
+  <app-rod-price-statistics [rodId]="getRodId()"></app-rod-price-statistics>
 } @else if (rodStore.errorMessage(); as errorMessage) {
   <div>{{ errorMessage }}</div>
 }

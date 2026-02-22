@@ -6,6 +6,13 @@ export const dbConfig: DBConfig = {
   version: 1,
   objectStoresMeta: [
     {
+      store: DbStoreName.USER_PROFILE_SETTINGS,
+      storeConfig: { keyPath: 'id', autoIncrement: true },
+      storeSchema: [
+        { name: 'defaultCurrency', keypath: 'defaultCurrency', options: { unique: false } },
+      ],
+    },
+    {
       store: DbStoreName.ROD_TYPES,
       storeConfig: { keyPath: 'id', autoIncrement: true },
       storeSchema: [{ name: 'name', keypath: 'name', options: { unique: true } }],

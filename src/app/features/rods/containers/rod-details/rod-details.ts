@@ -5,10 +5,11 @@ import { BrandNamePipe } from '../../pipes/brand-name.pipe';
 import { RodTypeNamePipe } from '../../pipes/rod-type-name.pipe';
 import { ActivatedRoute } from '@angular/router';
 import { RodPriceStatistics } from '../rod-price-statistics/rod-price-statistics';
+import { VideoPlayer } from '../../components/video-player/video-player';
 
 @Component({
   selector: 'app-rod-details',
-  imports: [BrandNamePipe, RodTypeNamePipe, RodPriceStatistics],
+  imports: [BrandNamePipe, RodTypeNamePipe, RodPriceStatistics, VideoPlayer],
   templateUrl: './rod-details.html',
   styleUrl: './rod-details.scss',
   providers: [RodDetailsStore],

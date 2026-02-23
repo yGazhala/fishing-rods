@@ -1,3 +1,5 @@
+import { VideoMetadata } from './video-metadata';
+
 export type Rod = {
   id: string;
   isFavorite: boolean;
@@ -24,7 +26,7 @@ export type Rod = {
   material?: string;
   description?: string;
   imageUrls?: string[];
-  videoUrls?: string[];
+  videos?: VideoMetadata[];
   catalogUrl?: string;
   searchIndex: string;
 };

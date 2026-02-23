@@ -50,7 +50,12 @@ export const dbConfig: DBConfig = {
         { name: 'material', keypath: 'material', options: { unique: false } },
         { name: 'description', keypath: 'description', options: { unique: false } },
         { name: 'imageUrls', keypath: 'imageUrls', options: { unique: false } },
-        { name: 'videoUrls', keypath: 'videoUrls', options: { unique: false } },
+        // Indexing 'videoId' inside 'videos' array
+        {
+          name: 'videoIds',
+          keypath: 'videos.videoId',
+          options: { unique: false, multiEntry: true },
+        },
         { name: 'catalogUrl', keypath: 'catalogUrl', options: { unique: false } },
         { name: 'searchIndex', keypath: 'searchIndex', options: { unique: false } },
       ],

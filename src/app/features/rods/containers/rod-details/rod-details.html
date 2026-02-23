@@ -8,16 +8,12 @@
     {{ rod.maxLureWeightGrams }} grams, {{ rod.typeId | rodTypeName }}
   </h3>
 
-  @if (rod.videoUrls?.length) {
-    <!-- TODO: Insert video from rod object -->
-    <iframe
-      width="560"
-      height="315"
-      src="https://www.youtube.com/embed/-NQLMkw79N0"
-      title="YouTube video player"
-      frameborder="0"
-      allowfullscreen
-    ></iframe>
+  @for (image of rod.imageUrls || []; track image) {
+    <img [src]="image" width="640px" alt="Rod" class="rod-image" />
+  }
+
+  @for (video of rod.videos || []; track video.videoId) {
+    <app-video-player [metadata]="video"></app-video-player>
   }
 
   <app-rod-price-statistics [rodId]="getRodId()"></app-rod-price-statistics>

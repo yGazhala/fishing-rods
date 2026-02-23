@@ -1,21 +1,25 @@
 import { Component, inject } from '@angular/core';
 import { AppDataBackupStore } from './app-data-backup.store';
-import { MatButton } from '@angular/material/button';
 import { UserProfileSettingsStore } from '../../services/user-profile-settings.store';
-import { MatFormField, MatLabel } from '@angular/material/input';
-import { MatOption } from '@angular/material/core';
-import { MatSelect, MatSelectChange } from '@angular/material/select';
-import { CurrencyCode } from '../../../types/currency-code';
 import { getCurrencyOptions } from '../../../utils/get-currency-options';
+import {
+  MatFormField,
+  MatLabel,
+  MatOption,
+  MatSelect,
+  MatSelectChange,
+} from '@angular/material/select';
+import { CurrencyCode } from '../../../types/currency-code';
+import { MatButton } from '@angular/material/button';
 
 @Component({
-  selector: 'app-app-data-backup',
+  selector: 'app-user-profile-settings',
   imports: [MatButton, MatFormField, MatLabel, MatOption, MatSelect],
-  templateUrl: './app-data-backup.html',
-  styleUrl: './app-data-backup.scss',
+  templateUrl: './user-profile-settings.html',
+  styleUrl: './user-profile-settings.scss',
   providers: [AppDataBackupStore],
 })
-export class AppDataBackup {
+export class UserProfileSettings {
   protected store = inject(AppDataBackupStore);
   protected userSettings = inject(UserProfileSettingsStore);
 

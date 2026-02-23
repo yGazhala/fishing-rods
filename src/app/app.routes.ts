@@ -1,12 +1,12 @@
 import { Routes } from '@angular/router';
-import { AppDataBackup } from './core/containers/app-data-backup/app-data-backup';
+import { UserProfileSettings } from './core/containers/user-profile-settings/user-profile-settings';
 import { rodsRoutes } from './features/rods/rods-routes';
 import { PageNotFound } from './core/containers/page-not-found/page-not-found';
 
 export const routes: Routes = [
   {
-    path: 'backup',
-    component: AppDataBackup,
+    path: 'settings',
+    component: UserProfileSettings,
   },
   ...rodsRoutes,
   {

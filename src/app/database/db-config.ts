@@ -7,7 +7,7 @@ export const dbConfig: DBConfig = {
   objectStoresMeta: [
     {
       store: DbStoreName.USER_PROFILE_SETTINGS,
-      storeConfig: { keyPath: 'id', autoIncrement: true },
+      storeConfig: { keyPath: 'userId', autoIncrement: true },
       storeSchema: [
         { name: 'defaultCurrency', keypath: 'defaultCurrency', options: { unique: false } },
       ],

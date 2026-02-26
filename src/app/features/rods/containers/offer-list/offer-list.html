@@ -1,0 +1,11 @@
+<div class="navigation-controls">
+  <a href="" (click)="goBack($event)">Back to Rod</a>
+
+  <button
+    [matButton]="'filled'"
+    [routerLink]="addOfferRouter.composeRouterLink({ rodId })"
+    [queryParams]="{ goBackText: 'Back to Offers' }"
+  >
+    Add offer
+  </button>
+</div>

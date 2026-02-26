@@ -1,6 +1,18 @@
-<p>
+<div class="navigation-controls">
   <a href="" (click)="goBack($event)">Back to Rods</a>
-</p>
+
+  <div class="navigation-controls-right">
+    <a [routerLink]="offerListRouter.composeRouterLink({ rodId })"> View all offers </a>
+
+    <button
+      [matButton]="'filled'"
+      [routerLink]="addOfferRouter.composeRouterLink({ rodId })"
+      [queryParams]="{ goBackText: 'Back to Rod' }"
+    >
+      Add offer
+    </button>
+  </div>
+</div>
 
 @if (rodStore.rod(); as rod) {
   <h3>
@@ -16,7 +28,7 @@
     <app-video-player [metadata]="video"></app-video-player>
   }
 
-  <app-rod-price-statistics [rodId]="getRodId()"></app-rod-price-statistics>
+  <app-rod-price-statistics [rodId]="rodId"></app-rod-price-statistics>
 } @else if (rodStore.errorMessage(); as errorMessage) {
   <div>{{ errorMessage }}</div>
 }

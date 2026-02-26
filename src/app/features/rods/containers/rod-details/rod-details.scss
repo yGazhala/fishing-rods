@@ -1,3 +1,15 @@
+.navigation-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.navigation-controls-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
 .rod-image {
   margin-bottom: 24px;
 }

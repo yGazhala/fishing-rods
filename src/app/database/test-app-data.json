@@ -1,7 +1,7 @@
 {
   "userProfileSettings": [
     {
-      "id": "current_user",
+      "userId": "current_user",
       "defaultCurrency": "UAH"
     }
   ],

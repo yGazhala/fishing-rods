@@ -6,7 +6,7 @@ import { DbData } from '../types/db-data';
 import { Brand } from '../types/brand';
 import { RodType } from '../types/rod-type';
 import { Rod } from '../types/rod';
-import { Advertisement } from '../types/advertisement';
+import { Offer } from '../types/offer';
 import { RodListParams } from '../types/rod-list-params';
 import { UserProfileSettings } from '../types/user-profile-settings';
 import { CurrencyCode } from '../types/currency-code';
@@ -23,15 +23,15 @@ export class DbService {
       this.db.getAll<Brand>(DbStoreName.BRANDS),
       this.db.getAll<RodType>(DbStoreName.ROD_TYPES),
       this.db.getAll<Rod>(DbStoreName.RODS),
-      this.db.getAll<Advertisement>(DbStoreName.ADVERTISEMENTS),
+      this.db.getAll<Offer>(DbStoreName.OFFERS),
       this.db.getAll<UserProfileSettings>(DbStoreName.USER_PROFILE_SETTINGS),
     ]).pipe(
-      map(([brands, rodTypes, rods, advertisements, userProfileSettings]) => {
+      map(([brands, rodTypes, rods, offers, userProfileSettings]) => {
         return {
           brands,
           rodTypes,
           rods,
-          advertisements,
+          offers,
           userProfileSettings,
         };
       }),
@@ -85,11 +85,11 @@ export class DbService {
   }
 
   /**
-   * Returns all advertisements for the rod sorted by timestamp in descending order (newest first)
+   * Returns all offers for the rod sorted by timestamp in descending order (newest first)
    */
-  public getAdvertisementsByRodDescending(rodId: string): Observable<Advertisement[]> {
+  public getOffersByRodDescending(rodId: string): Observable<Offer[]> {
     return this.db
-      .getAllByIndex<Advertisement>(DbStoreName.ADVERTISEMENTS, 'rodId', IDBKeyRange.only(rodId))
+      .getAllByIndex<Offer>(DbStoreName.OFFERS, 'rodId', IDBKeyRange.only(rodId))
       .pipe(map((items) => items.sort((a, b) => b.timestamp - a.timestamp)));
   }
 
@@ -118,7 +118,7 @@ export class DbService {
       this.db.clear(DbStoreName.BRANDS),
       this.db.clear(DbStoreName.ROD_TYPES),
       this.db.clear(DbStoreName.RODS),
-      this.db.clear(DbStoreName.ADVERTISEMENTS),
+      this.db.clear(DbStoreName.OFFERS),
     ]).pipe(map(() => undefined));
   }
 
@@ -139,8 +139,8 @@ export class DbService {
     if (data?.rods?.length) {
       operations.push(this.db.bulkPut(DbStoreName.RODS, data.rods));
     }
-    if (data?.advertisements?.length) {
-      operations.push(this.db.bulkPut(DbStoreName.ADVERTISEMENTS, data.advertisements));
+    if (data?.offers?.length) {
+      operations.push(this.db.bulkPut(DbStoreName.OFFERS, data.offers));
     }
     return forkJoin(operations).pipe(map(() => undefined));
   }

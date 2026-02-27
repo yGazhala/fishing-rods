@@ -1,4 +1,4 @@
-export type Advertisement = {
+export type Offer = {
   id: string;
   rodId: string;
   isUsed: boolean;

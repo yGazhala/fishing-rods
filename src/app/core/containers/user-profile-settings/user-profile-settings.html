@@ -15,10 +15,10 @@
       (change)="onUploadFileSelected($event)"
     />
   </p>
-  @if (store.isUploadDataFromFileLoading()) {
+  @if (backupStore.isUploadDataFromFileLoading()) {
     <p>Uploading data...</p>
   }
-  @if (store.uploadDataFromFileErrorMessage(); as errorMessage) {
+  @if (backupStore.uploadDataFromFileErrorMessage(); as errorMessage) {
     <p>{{ errorMessage }}</p>
   }
 </div>
@@ -28,13 +28,13 @@
   <p>
     <button
       [matButton]="'filled'"
-      [disabled]="store.isDownloadDataLoading()"
-      (click)="store.downloadData()"
+      [disabled]="backupStore.isDownloadDataLoading()"
+      (click)="backupStore.downloadData()"
     >
       Download app data
     </button>
   </p>
-  @if (store.downloadDataErrorMessage(); as errorMessage) {
+  @if (backupStore.downloadDataErrorMessage(); as errorMessage) {
     <p>{{ errorMessage }}</p>
   }
 </div>

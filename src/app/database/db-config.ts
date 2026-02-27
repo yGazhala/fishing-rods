@@ -61,7 +61,7 @@ export const dbConfig: DBConfig = {
       ],
     },
     {
-      store: DbStoreName.ADVERTISEMENTS,
+      store: DbStoreName.OFFERS,
       storeConfig: { keyPath: 'id', autoIncrement: true },
       storeSchema: [
         { name: 'rodId', keypath: 'rodId', options: { unique: false } },

@@ -4,11 +4,11 @@ import { CurrencyCode } from '../../../types/currency-code';
 import { LineChartData } from '../types/line-chart-data';
 import { catchError, map, Observable, of, Subject, switchMap, tap } from 'rxjs';
 import { PriceLineChartDataByCurrency } from '../types/price-line-chart-data-by-currency';
-import { advertisementsToPriceLineChartDataByCurrency } from '../utils/rod-price-statistics/advertisements-to-price-line-chart-data-by-currency';
+import { offersToPriceLineChartDataByCurrency } from '../utils/rod-price-statistics/offers-to-price-line-chart-data-by-currency';
 import { PriceStatisticsSummary } from '../types/price-statistics-summary';
 import { Price } from '../types/price';
 import { getLatestPriceFromStatisticsSummary } from '../utils/rod-price-statistics/get-latest-price-from-statistics-summary';
-import { advertisementsToPriceStatisticsSummary } from '../utils/rod-price-statistics/advertisements-to-price-statistics-summary';
+import { offersToPriceStatisticsSummary } from '../utils/rod-price-statistics/offers-to-price-statistics-summary';
 import { UserProfileSettingsStore } from '../../../core/services/user-profile-settings.store';
 
 @Injectable()
@@ -50,9 +50,9 @@ export class RodPriceStatisticsStore {
   private onLoadPriceLineChartData: Observable<undefined> = this.loadPriceLineChartDataRequest.pipe(
     tap(() => this.isPriceLineChartDataLoading.set(true)),
     switchMap(({ rodId }) => {
-      return this.dbService.getAdvertisementsByRodDescending(rodId).pipe(
-        tap((advertisements) => {
-          const result = advertisementsToPriceLineChartDataByCurrency(advertisements);
+      return this.dbService.getOffersByRodDescending(rodId).pipe(
+        tap((offers) => {
+          const result = offersToPriceLineChartDataByCurrency(offers);
           this.priceLineChartDataByCurrency.set(result);
           this.isPriceLineChartDataLoading.set(false);
         }),
@@ -72,9 +72,9 @@ export class RodPriceStatisticsStore {
     this.loadPriceStatisticsSummaryRequest.pipe(
       tap(() => this.isPriceStatisticsSummaryLoading.set(true)),
       switchMap(({ rodId }) => {
-        return this.dbService.getAdvertisementsByRodDescending(rodId).pipe(
-          tap((advertisements) => {
-            const result = advertisementsToPriceStatisticsSummary(advertisements);
+        return this.dbService.getOffersByRodDescending(rodId).pipe(
+          tap((offers) => {
+            const result = offersToPriceStatisticsSummary(offers);
             this.priceStatisticsSummary.set(result);
             this.isPriceStatisticsSummaryLoading.set(false);
           }),

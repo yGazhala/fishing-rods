@@ -167,9 +167,9 @@
       "searchIndex": "graphiteleader tiro 24gtirc-762-mh"
     }
   ],
-  "advertisements": [
+  "offers": [
     {
-      "id": "ad1",
+      "id": "offer-1",
       "rodId": "24GTIRC-762-MH",
       "isUsed": false,
       "priceUAH": 16450,
@@ -179,7 +179,7 @@
       "url": "https://ibis-gear.com/rybalstvo/details/spining-graphiteleader-24-tiro-24gtirc-762mh-2-29m-9-38g-casting/"
     },
     {
-      "id": "ad2",
+      "id": "offer-2",
       "rodId": "24GTIRC-762-MH",
       "isUsed": true,
       "priceUAH": 12700,
@@ -190,7 +190,7 @@
       "url": "https://www.olx.ua/d/uk/obyavlenie/graphiteleader-24-tiro-762mh-IDZtgf0.html"
     },
     {
-      "id": "ad3",
+      "id": "offer-3",
       "rodId": "24GTIRC-762-MH",
       "isUsed": false,
       "priceUAH": 16450,
@@ -199,7 +199,7 @@
       "sellerName": "Ібіс"
     },
     {
-      "id": "ad4",
+      "id": "offer-4",
       "rodId": "24GTIRC-762-MH",
       "isUsed": true,
       "priceUAH": 13500,
@@ -208,7 +208,7 @@
       "sellerName": "Ібіс"
     },
     {
-      "id": "ad5",
+      "id": "offer-5",
       "rodId": "24GTIRC-762-MH",
       "isUsed": false,
       "priceUAH": 13983,
@@ -217,7 +217,7 @@
       "sellerName": "Ібіс"
     },
     {
-      "id": "ad6",
+      "id": "offer-6",
       "rodId": "24GTIRC-762-MH",
       "isUsed": false,
       "priceUAH": 16450,

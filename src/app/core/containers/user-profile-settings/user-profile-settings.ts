@@ -20,7 +20,7 @@ import { MatButton } from '@angular/material/button';
   providers: [AppDataBackupStore],
 })
 export class UserProfileSettings {
-  protected store = inject(AppDataBackupStore);
+  protected backupStore = inject(AppDataBackupStore);
   protected userSettings = inject(UserProfileSettingsStore);
 
   protected currencyOptions = getCurrencyOptions();
@@ -28,7 +28,7 @@ export class UserProfileSettings {
   protected onUploadFileSelected(event: Event): void {
     const files = (event.target as HTMLInputElement).files;
     if (files?.length) {
-      this.store.uploadDataFromFile(files[0]);
+      this.backupStore.uploadDataFromFile(files[0]);
     }
   }
 

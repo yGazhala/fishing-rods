@@ -1,20 +1,20 @@
-import { Advertisement } from '../../../../types/advertisement';
+import { Offer } from '../../../../types/offer';
 import { CurrencyCode } from '../../../../types/currency-code';
 import { PricesByMonth } from '../../types/prices-by-month';
 import { getEmptyMonthPricesForInterval } from './get-empty-month-prices-for-interval';
 import { timestampToMonthLabel } from './timestamp-to-month-label';
 import { calculateAverage } from './calculate-average';
 
-export const advertisementsToMonthPrices = (
-  advertisementsInDescOrder: Advertisement[],
+export const offersToMonthPrices = (
+  offersInDescOrder: Offer[],
   currency: CurrencyCode,
 ): PricesByMonth[] => {
-  if (!advertisementsInDescOrder.length) {
+  if (!offersInDescOrder.length) {
     return [];
   }
 
-  const newestAd = advertisementsInDescOrder[0];
-  const oldestAd = advertisementsInDescOrder.at(-1) as Advertisement;
+  const newestAd = offersInDescOrder[0];
+  const oldestAd = offersInDescOrder.at(-1) as Offer;
 
   const monthsInAscOrder = getEmptyMonthPricesForInterval(oldestAd.timestamp, newestAd.timestamp);
 
@@ -26,7 +26,7 @@ export const advertisementsToMonthPrices = (
 
   // Fill prices for each month
   const priceKey = currency === 'UAH' ? 'priceUAH' : 'priceUSD';
-  advertisementsInDescOrder.forEach((ad) => {
+  offersInDescOrder.forEach((ad) => {
     const monthLabel = timestampToMonthLabel(ad.timestamp);
     const price = ad[priceKey];
     if (ad.isUsed) {

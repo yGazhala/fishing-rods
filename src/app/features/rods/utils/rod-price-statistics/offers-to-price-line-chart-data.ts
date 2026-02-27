@@ -1,15 +1,15 @@
 import { LineChartData } from '../../types/line-chart-data';
-import { Advertisement } from '../../../../types/advertisement';
+import { Offer } from '../../../../types/offer';
 import { CurrencyCode } from '../../../../types/currency-code';
-import { advertisementsToMonthPrices } from './advertisements-to-month-prices';
+import { offersToMonthPrices } from './offers-to-month-prices';
 import { LineChartDataset } from '../../types/line-chart-dataset';
 import { getLineChartScalesForDatasets } from './get-line-chart-scales-for-datasets';
 
-export const advertisementsToPriceLineChartData = (
-  advertisementsInDescOrder: Advertisement[],
+export const offersToPriceLineChartData = (
+  offersInDescOrder: Offer[],
   currency: CurrencyCode,
 ): LineChartData | undefined => {
-  const pricesByMonths = advertisementsToMonthPrices(advertisementsInDescOrder, currency);
+  const pricesByMonths = offersToMonthPrices(offersInDescOrder, currency);
 
   if (pricesByMonths.length <= 1) {
     return undefined;

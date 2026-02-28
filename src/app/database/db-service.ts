@@ -10,6 +10,7 @@ import { Offer } from '../types/offer';
 import { RodListParams } from '../types/rod-list-params';
 import { UserProfileSettings } from '../types/user-profile-settings';
 import { CurrencyCode } from '../types/currency-code';
+import { NewOffer } from '../types/new-offer';
 
 @Injectable({
   providedIn: 'root',
@@ -91,6 +92,14 @@ export class DbService {
     return this.db
       .getAllByIndex<Offer>(DbStoreName.OFFERS, 'rodId', IDBKeyRange.only(rodId))
       .pipe(map((items) => items.sort((a, b) => b.timestamp - a.timestamp)));
+  }
+
+  public addOffer(newOffer: NewOffer): Observable<{ id: number }> {
+    return this.db.add(DbStoreName.OFFERS, newOffer).pipe(
+      map((offer) => {
+        return { id: offer.id };
+      }),
+    );
   }
 
   public getUserProfileSettings(): Observable<UserProfileSettings> {

@@ -1,7 +1,7 @@
 import { inject, Injectable, signal } from '@angular/core';
-import { DbService } from '../../../../database/db-service';
+import { DbService } from '../../../database/db-service';
 import { catchError, map, Observable, of, Subject, switchMap, tap } from 'rxjs';
-import { Rod } from '../../../../types/rod';
+import { Rod } from '../../../types/rod';
 
 @Injectable()
 export class RodDetailsStore {

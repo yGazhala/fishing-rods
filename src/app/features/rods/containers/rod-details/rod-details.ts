@@ -1,6 +1,6 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { RodDetailsRouterService } from '../../services/rod-details-router.service';
-import { RodDetailsStore } from './rod-details.store';
+import { RodDetailsStore } from '../../services/rod-details.store';
 import { BrandNamePipe } from '../../pipes/brand-name.pipe';
 import { RodTypeNamePipe } from '../../pipes/rod-type-name.pipe';
 import { ActivatedRoute, RouterLink } from '@angular/router';

@@ -1,20 +1,4 @@
 {
-  "userProfileSettings": [
-    {
-      "userId": "current_user",
-      "defaultCurrency": "UAH"
-    }
-  ],
-  "rodTypes": [
-    {
-      "name": "Spinning",
-      "id": "spinning"
-    },
-    {
-      "name": "Casting",
-      "id": "casting"
-    }
-  ],
   "brands": [
     {
       "name": "Azura",
@@ -65,41 +49,17 @@
       "id": "yamaga_blanks"
     }
   ],
-  "rods": [
+  "rodTypes": [
     {
-      "id": "black_porgy_5g_bp5b-782m",
-      "isFavorite": false,
-      "typeId": "casting",
-      "brandId": "major_craft",
-      "model": "Black Porgy 5G BP5B-782M",
-      "year": 2020,
-      "isDiscontinued": false,
-      "length": 234,
-      "action": "Regular Fast",
-      "tipType": "Tubular",
-      "minLureWeightGrams": 4,
-      "maxLureWeightGrams": 20,
-      "minBraidPE": 0.4,
-      "maxBraidPE": 1.5,
-      "weightGrams": 104,
-      "numberOfSections": 2,
-      "transportLengthCm": 121,
-      "guides": "Fuji Stainless Sic, Top guide + 10 pcs",
-      "material": "T1100G",
-      "description": "It is a model that supports frig rig with spinning that emphasizes distance. It is an indispensable model to directly aim for points with many roots and offshore breaks. The blanks with a particularly high sensitivity design have excellent operability of the lure at the bottom, and if you can feel the undulations of the bottom as well as the change in the water flow, it will have a big impact on the fishing results.",
-      "catalogUrl": "https://www.majorcraft.co.jp/rod/bp5/chinninggame/",
-      "imageUrls": [
-        "https://www.majorcraft.co.jp/wp-content/uploads/2024/09/BP5B-782M-1.png",
-        "https://www.majorcraft.co.jp/wp-content/uploads/2024/09/BP5B-782M_grip-1.png"
-      ],
-      "videos": [
-        {
-          "provider": "youtube",
-          "videoId": "Mt67y-5uCy0"
-        }
-      ],
-      "searchIndex": "major craft black porgy 5g bp5b-782m"
+      "name": "Casting",
+      "id": "casting"
     },
+    {
+      "name": "Spinning",
+      "id": "spinning"
+    }
+  ],
+  "rods": [
     {
       "id": "20GSILPC-792M",
       "isFavorite": true,
@@ -165,11 +125,55 @@
         }
       ],
       "searchIndex": "graphiteleader tiro 24gtirc-762-mh"
+    },
+    {
+      "id": "black_porgy_5g_bp5b-782m",
+      "isFavorite": false,
+      "typeId": "casting",
+      "brandId": "major_craft",
+      "model": "Black Porgy 5G BP5B-782M",
+      "year": 2020,
+      "isDiscontinued": false,
+      "length": 234,
+      "action": "Regular Fast",
+      "tipType": "Tubular",
+      "minLureWeightGrams": 4,
+      "maxLureWeightGrams": 20,
+      "minBraidPE": 0.4,
+      "maxBraidPE": 1.5,
+      "weightGrams": 104,
+      "numberOfSections": 2,
+      "transportLengthCm": 121,
+      "guides": "Fuji Stainless Sic, Top guide + 10 pcs",
+      "material": "T1100G",
+      "description": "It is a model that supports frig rig with spinning that emphasizes distance. It is an indispensable model to directly aim for points with many roots and offshore breaks. The blanks with a particularly high sensitivity design have excellent operability of the lure at the bottom, and if you can feel the undulations of the bottom as well as the change in the water flow, it will have a big impact on the fishing results.",
+      "catalogUrl": "https://www.majorcraft.co.jp/rod/bp5/chinninggame/",
+      "imageUrls": [
+        "https://www.majorcraft.co.jp/wp-content/uploads/2024/09/BP5B-782M-1.png",
+        "https://www.majorcraft.co.jp/wp-content/uploads/2024/09/BP5B-782M_grip-1.png"
+      ],
+      "videos": [
+        {
+          "provider": "youtube",
+          "videoId": "Mt67y-5uCy0"
+        }
+      ],
+      "searchIndex": "major craft black porgy 5g bp5b-782m"
     }
   ],
   "offers": [
     {
-      "id": "offer-1",
+      "rodId": "20GSILPC-792M",
+      "timestamp": 1772302499101,
+      "priceUAH": 21020,
+      "priceUSD": 483,
+      "isUsed": false,
+      "sellerName": "Bereg",
+      "url": "https://bereg.ua/uk/spinning-graphiteleader-silverado-proto-20gsilps.html",
+      "id": 1
+    },
+    {
+      "id": 2,
       "rodId": "24GTIRC-762-MH",
       "isUsed": false,
       "priceUAH": 16450,
@@ -179,7 +183,7 @@
       "url": "https://ibis-gear.com/rybalstvo/details/spining-graphiteleader-24-tiro-24gtirc-762mh-2-29m-9-38g-casting/"
     },
     {
-      "id": "offer-2",
+      "id": 3,
       "rodId": "24GTIRC-762-MH",
       "isUsed": true,
       "priceUAH": 12700,
@@ -190,7 +194,7 @@
       "url": "https://www.olx.ua/d/uk/obyavlenie/graphiteleader-24-tiro-762mh-IDZtgf0.html"
     },
     {
-      "id": "offer-3",
+      "id": 4,
       "rodId": "24GTIRC-762-MH",
       "isUsed": false,
       "priceUAH": 16450,
@@ -199,7 +203,7 @@
       "sellerName": "Ібіс"
     },
     {
-      "id": "offer-4",
+      "id": 5,
       "rodId": "24GTIRC-762-MH",
       "isUsed": true,
       "priceUAH": 13500,
@@ -208,7 +212,7 @@
       "sellerName": "Ібіс"
     },
     {
-      "id": "offer-5",
+      "id": 6,
       "rodId": "24GTIRC-762-MH",
       "isUsed": false,
       "priceUAH": 13983,
@@ -217,13 +221,48 @@
       "sellerName": "Ібіс"
     },
     {
-      "id": "offer-6",
+      "id": 7,
       "rodId": "24GTIRC-762-MH",
       "isUsed": false,
       "priceUAH": 16450,
       "priceUSD": 389,
       "timestamp": 1764453600000,
       "sellerName": "Ібіс"
+    },
+    {
+      "rodId": "20GSILPC-792M",
+      "timestamp": 1768428000000,
+      "priceUAH": 24730,
+      "priceUSD": 572,
+      "isUsed": false,
+      "sellerName": "Bereg",
+      "id": 8
+    },
+    {
+      "rodId": "black_porgy_5g_bp5b-782m",
+      "timestamp": 1772304132348,
+      "priceUAH": 14719,
+      "priceUSD": 339,
+      "isUsed": false,
+      "sellerName": "Fish-fish",
+      "url": "https://fish-fish.com.ua/ru/product/blackporgy-5g-bp5b-782m",
+      "id": 9
+    },
+    {
+      "rodId": "black_porgy_5g_bp5b-782m",
+      "timestamp": 1768428000000,
+      "priceUAH": 14704,
+      "priceUSD": 340,
+      "isUsed": false,
+      "sellerName": "Fish&Tech",
+      "url": "https://fish-tech.com.ua/udylyshche-major-craft-blackporgy-5g-casting-2pcs-78-pe-0-4-1-5-4-20g-regular-fast",
+      "id": 10
+    }
+  ],
+  "userProfileSettings": [
+    {
+      "userId": "current_user",
+      "defaultCurrency": "UAH"
     }
   ]
 }

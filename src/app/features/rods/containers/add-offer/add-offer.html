@@ -1,3 +1,32 @@
 <div class="navigation-controls">
   <a href="" (click)="goBack($event)">{{ goBackText }}</a>
 </div>
+
+@if (rodStore.rod(); as rod) {
+  <div class="title">
+    <span class="bold">New offer:</span> {{ rod.brandId | brandName }} {{ rod.model }}
+  </div>
+} @else {
+  <div class="title"><span class="bold">New offer:</span></div>
+}
+
+<form novalidate (submit)="save($event)">
+  <app-datepicker [field]="offerForm.date"></app-datepicker>
+
+  <app-input-number [label]="'Price (UAH)'" [field]="offerForm.priceUAH"></app-input-number>
+
+  <app-input-number [label]="'Price (USD)'" [field]="offerForm.priceUSD"></app-input-number>
+
+  <app-textarea [label]="'Description'" [field]="offerForm.description" [rows]="6"></app-textarea>
+
+  <app-input [label]="'Seller'" [field]="offerForm.sellerName"></app-input>
+
+  <app-input [label]="'URL'" [field]="offerForm.url"></app-input>
+
+  <mat-checkbox [formField]="offerForm.isUsed">Used rod</mat-checkbox>
+
+  <div class="actions">
+    <button matButton (click)="goBack($event)">Cancel</button>
+    <button [matButton]="'filled'" type="submit">Save</button>
+  </div>
+</form>

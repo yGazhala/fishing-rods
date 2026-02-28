@@ -1,5 +1,5 @@
 export type Offer = {
-  id: string;
+  id: number;
   rodId: string;
   isUsed: boolean;
   priceUAH: number;

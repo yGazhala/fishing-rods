@@ -1,0 +1,10 @@
+<mat-form-field class="form-field" appearance="outline">
+  <mat-label>{{ label() }}</mat-label>
+  <input matInput [formField]="field()" />
+
+  @if (isMaxLengthErrorShown()) {
+    <mat-error>Maximum {{ maxLengthValue() }} chars length</mat-error>
+  } @else if (isRequiredErrorShown()) {
+    <mat-error>Required field</mat-error>
+  }
+</mat-form-field>

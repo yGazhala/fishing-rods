@@ -21,6 +21,11 @@ export class UserProfileSettingsStore {
     return settings?.defaultCurrency ?? 'UAH';
   });
 
+  public secondaryCurrency(): CurrencyCode {
+    const defaultCurrency = this.defaultCurrency();
+    return defaultCurrency === 'UAH' ? 'USD' : 'UAH';
+  }
+
   public isSettingsLoading = signal(false);
   public settingsErrorMessage = signal<string | undefined>(undefined);
 

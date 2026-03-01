@@ -102,6 +102,10 @@ export class DbService {
     );
   }
 
+  public removeOffer(offerId: number): Observable<void> {
+    return this.db.delete(DbStoreName.OFFERS, offerId).pipe(map(() => undefined));
+  }
+
   public getUserProfileSettings(): Observable<UserProfileSettings> {
     return this.db.getByKey<UserProfileSettings>(
       DbStoreName.USER_PROFILE_SETTINGS,

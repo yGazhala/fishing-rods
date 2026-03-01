@@ -1,6 +1,28 @@
-.navigation-controls {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.go-back-bar {
   margin-bottom: 24px;
+}
+
+.page-title {
+  font-size: 16px;
+}
+.bold {
+  font-weight: 600;
+}
+
+.add-offer-bar {
+  display: flex;
+  justify-content: flex-end;
+  margin: 16px 0;
+}
+
+table {
+  width: 100%;
+}
+
+tr.row {
+  cursor: pointer;
+}
+
+tr.row:hover {
+  background: whitesmoke;
 }

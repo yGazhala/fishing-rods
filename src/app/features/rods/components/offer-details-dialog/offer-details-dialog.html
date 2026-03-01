@@ -1,0 +1,38 @@
+<h2 mat-dialog-title>{{ offer.sellerName }}, {{ offer.timestamp | shortDate }}</h2>
+
+<mat-dialog-content>
+  <div class="row">
+    <div class="label">Condition:</div>
+    <div>{{ offer.isUsed ? 'Used' : 'New' }}</div>
+  </div>
+
+  <div class="row">
+    <div class="label">Price, UAH:</div>
+    <div>{{ offer.priceUAH | number }}</div>
+  </div>
+
+  <div class="row">
+    <div class="label">Price, USD:</div>
+    <div>{{ offer.priceUSD | number }}</div>
+  </div>
+
+  @if (offer.description) {
+    <div class="row">
+      <div class="label">Description:</div>
+      <div>{{ offer.description }}</div>
+    </div>
+  }
+
+  @if (offer.url) {
+    <div class="row">
+      <div class="label">URL:</div>
+      <div>
+        <a [href]="offer.url" target="_blank">View on {{ offer.sellerName }}</a>
+      </div>
+    </div>
+  }
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button matButton [mat-dialog-close]="true">Close</button>
+</mat-dialog-actions>

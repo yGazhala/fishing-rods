@@ -3,11 +3,11 @@
 </div>
 
 @if (rodStore.rod(); as rod) {
-  <div class="title">
+  <div class="page-title">
     <span class="bold">New offer:</span> {{ rod.brandId | brandName }} {{ rod.model }}
   </div>
 } @else {
-  <div class="title"><span class="bold">New offer:</span></div>
+  <div class="page-title"><span class="bold">New offer:</span></div>
 }
 
 <form novalidate (submit)="save($event)">

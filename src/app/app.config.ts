@@ -6,6 +6,7 @@ import { MAT_DATE_LOCALE } from '@angular/material/core';
 
 import { routes } from './app.routes';
 import { dbConfig } from './database/db-config';
+import { appLocale } from './utils/app-locale';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -13,6 +14,6 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideIndexedDb(dbConfig),
     provideNativeDateAdapter(),
-    { provide: MAT_DATE_LOCALE, useValue: 'uk-UA' },
+    { provide: MAT_DATE_LOCALE, useValue: appLocale },
   ],
 };

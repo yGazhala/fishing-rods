@@ -1,5 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { Price } from '../types/price';
+import { displayNumber } from '../../../utils/display-number';
 
 @Pipe({
   name: 'price',
@@ -7,7 +8,7 @@ import { Price } from '../types/price';
 export class PricePipe implements PipeTransform {
   public transform(price?: Price): string {
     if (price) {
-      return `${price.value} ${price.currencyCode}`;
+      return `${displayNumber(price.value)} ${price.currencyCode}`;
     }
     return '--';
   }

@@ -11,12 +11,12 @@ import { UserProfileSettingsStore } from '../../../../core/services/user-profile
 import { Offer } from '../../../../types/offer';
 import { BrandNamePipe } from '../../pipes/brand-name.pipe';
 import { RodDetailsStore } from '../../services/rod-details.store';
-import { DecimalPipe } from '@angular/common';
 import { ShortDatePipe } from '../../../../shared/pipes/short-date.pipe';
 import { MatDialog } from '@angular/material/dialog';
 import { OfferDetailsDialog } from '../../components/offer-details-dialog/offer-details-dialog';
 import { ConfirmDialogService } from '../../../../core/services/confirm-dialog.service';
 import { dateToShortDate } from '../../../../utils/date-to-short-date';
+import { DisplayNumberPipe } from '../../../../shared/pipes/display-number.pipe';
 
 @Component({
   selector: 'app-offer-list',
@@ -28,7 +28,7 @@ import { dateToShortDate } from '../../../../utils/date-to-short-date';
     MatTableModule,
     BrandNamePipe,
     ShortDatePipe,
-    DecimalPipe,
+    DisplayNumberPipe,
   ],
   templateUrl: './offer-list.html',
   styleUrl: './offer-list.scss',

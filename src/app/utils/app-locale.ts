@@ -1,1 +1,1 @@
-export const appLocale = 'uk-UA';
+export const appLocale = 'uk';
